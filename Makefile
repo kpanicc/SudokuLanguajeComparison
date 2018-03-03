@@ -11,7 +11,7 @@ c-test:
 
 py-test:
 	echo "Python test:" >> $(OFILE)
-	{ time ./SudokuSolverC/exe/sudokutest; } 2>> $(OFILE)
+	{ time ./SudokuSolverPy/SudokuSolver.py; } 2>> $(OFILE)
 
 j-test:
 	echo "Java test:" >> $(OFILE)
