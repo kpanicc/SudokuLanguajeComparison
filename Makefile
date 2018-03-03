@@ -3,6 +3,7 @@ OFILE = benchmarks.txt
 all:
 	make c-test
 	make py-test
+	make j-test
 
 c-test:
 	echo "C test:" >> $(OFILE)
@@ -14,9 +15,7 @@ py-test:
 
 j-test:
 	echo "Java test:" >> $(OFILE)
-	cd SudokuSolverJava/
-	{ time java Sudoku; } 2>> ../$(OFILE)
-	cd ..
+	{ time java -cp SudokuSolverJava/ Sudoku; } 2>> $(OFILE)
 
 reset:
 	rm $(OFILE)
